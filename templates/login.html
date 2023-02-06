@@ -1,0 +1,26 @@
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+           document.getElementById("myForm").addEventListener("submit", function (e) {
+              var myForm = document.getElementById('myForm');
+              var hash = document.getElementById('hash').value;
+              myForm.action = '/token/' + hash;
+           });
+        });
+     </script>
+
+  </head>
+  <body>
+
+
+    <h1>Введіть ваш токен: </h1>
+
+    <form method="post" id="myForm" >
+        <label for="hash">Введіть токен:</label>
+        <input type="text" id="hash" name="hash"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

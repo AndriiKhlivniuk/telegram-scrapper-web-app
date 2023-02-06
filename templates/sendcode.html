@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Логін</title>
+  </head>
+  <body>
+
+
+    <h1>Введіть номер телефону з кодом, в такому форматі (+3801111111)</h1>
+
+    <form method="get" action = "/sendcode{{ phone }}" >
+        <label for="phone: ">Номер телефону:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

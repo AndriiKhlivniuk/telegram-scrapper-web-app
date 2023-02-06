@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Список груп</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+           document.getElementById("myForm").addEventListener("submit", function (e) {
+              var myForm = document.getElementById('myForm');
+              var group_id = document.getElementById('group_id').value;
+              myForm.action = '/parsegroup/' + group_id;
+           });
+        });
+     </script>
+
+  </head>
+  <body>
+    <h1>Список груп: </h1>
+    {% for group in result %}
+        <h4>{{ group }} :   {{ result[group] }}</h4>
+    {% endfor %}
+
+
+    <h1>Введіть номер группи</h1>
+
+    <form method="post" id="myForm" >
+        <label for="group_id">Введіть id групи:</label>
+        <input type="text" id="group_id" name="group_id"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

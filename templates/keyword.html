@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Список чатів</title>
+  </head>
+  <body>
+    <h1>Список чатів: </h1>
+    {% for chat in result %}
+        <h4>{{ chat }} :   {{ result[chat] }}</h4>
+    {% endfor %}
+
+
+    <h1>Введіть номер чату та стоп слово для пошуку повідомлень в цьому чаті</h1>
+
+    <form method="get" action = "/parsechat{{ chat_id }}{{ keyword }}" >
+        <label for="chat_id">Введіть id чату:</label>
+        <input type="text" id="chat_id" name="chat_id"><br><br>
+        <label for="keyword">Введіть стоп слово:</label>
+        <input type="text" id="keyword" name="keyword"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>
